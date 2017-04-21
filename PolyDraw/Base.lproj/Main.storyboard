@@ -45,7 +45,11 @@
                                             <segue destination="G7g-sg-6pZ" kind="show" id="Cy2-ox-ugq"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Undo" id="WtK-YM-ucs"/>
+                                    <barButtonItem title="Undo" id="WtK-YM-ucs">
+                                        <connections>
+                                            <action selector="UndoButton:" destination="BYZ-38-t0r" id="BfQ-I2-prR"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2c-gb-Dgl" customClass="DrawingView" customModule="PolyDraw" customModuleProvider="target">
@@ -64,6 +68,7 @@
                     <navigationItem key="navigationItem" id="VtJ-Gx-XJV"/>
                     <connections>
                         <outlet property="drawingView" destination="p2c-gb-Dgl" id="jMX-FX-m10"/>
+                        <outlet property="undoToolBarButton" destination="WtK-YM-ucs" id="dFg-GK-LV3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,8 +86,30 @@
                     <view key="view" contentMode="scaleToFill" id="hwn-tz-bOS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Line Width " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34d-dg-Su0">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-SC-f5Z">
+                                <rect key="frame" x="14" y="101" width="347" height="31"/>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="34d-dg-Su0" secondAttribute="leading" id="26c-em-I9c"/>
+                            <constraint firstItem="TnH-SC-f5Z" firstAttribute="top" secondItem="34d-dg-Su0" secondAttribute="bottom" constant="8" id="Fqu-st-l3e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TnH-SC-f5Z" secondAttribute="trailing" id="Jvp-fU-pu0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="34d-dg-Su0" secondAttribute="trailing" id="Ohm-YA-9Of"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TnH-SC-f5Z" secondAttribute="leading" id="g2b-2Z-I0V"/>
+                            <constraint firstItem="34d-dg-Su0" firstAttribute="top" secondItem="CXp-bm-ojl" secondAttribute="bottom" constant="8" id="kPv-Zc-SF1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lineWidthSlider" destination="TnH-SC-f5Z" id="z26-ac-20G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEq-8J-amx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

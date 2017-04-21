@@ -14,11 +14,16 @@ class ViewController: UIViewController {
         self.drawingView.shapeType = sender.selectedSegmentIndex
     }
     
+    var undoButtonStaus: Bool!
+    
     @IBOutlet weak var drawingView: DrawingView!
+    @IBOutlet var undoToolBarButton: UIBarButtonItem!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +31,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func UndoButton(_ sender: UIBarButtonItem) {
+        self.drawingView.removeLastShape()
+    }
+    
+    func undoButtonStatus(status: Bool){
+        undoToolBarButton.isEnabled = status
+    }
 
 }
 
