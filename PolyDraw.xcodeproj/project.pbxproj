@@ -17,6 +17,7 @@
 		17BFE59F1E68AEAF00FAC187 /* Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFE59E1E68AEAF00FAC187 /* Oval.swift */; };
 		17BFE5A11E68AFBB00FAC187 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFE5A01E68AFBB00FAC187 /* DrawingView.swift */; };
 		7B4E00BE1EA94BA800CAEACC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E00BD1EA94BA800CAEACC /* OptionsViewController.swift */; };
+		7BD258221EB253B60081EA7D /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD258211EB253B60081EA7D /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		17BFE59E1E68AEAF00FAC187 /* Oval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oval.swift; sourceTree = "<group>"; };
 		17BFE5A01E68AFBB00FAC187 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		7B4E00BD1EA94BA800CAEACC /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		7BD258211EB253B60081EA7D /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				17BFE59A1E68AB3B00FAC187 /* Shape.swift */,
 				17BFE59C1E68AC6100FAC187 /* Rect.swift */,
 				17BFE59E1E68AEAF00FAC187 /* Oval.swift */,
+				7BD258211EB253B60081EA7D /* Line.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				17BFE59B1E68AB3B00FAC187 /* Shape.swift in Sources */,
 				7B4E00BE1EA94BA800CAEACC /* OptionsViewController.swift in Sources */,
 				17BFE5A11E68AFBB00FAC187 /* DrawingView.swift in Sources */,
+				7BD258221EB253B60081EA7D /* Line.swift in Sources */,
 				17BFE5881E68AB0200FAC187 /* AppDelegate.swift in Sources */,
 				17BFE59D1E68AC6100FAC187 /* Rect.swift in Sources */,
 			);

@@ -33,6 +33,7 @@
                                             <segments>
                                                 <segment title="Rect"/>
                                                 <segment title="Oval"/>
+                                                <segment title="Line"/>
                                             </segments>
                                             <connections>
                                                 <action selector="shapeChosen:" destination="BYZ-38-t0r" eventType="valueChanged" id="3gj-7N-dUs"/>

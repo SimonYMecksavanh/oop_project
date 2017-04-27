@@ -13,15 +13,7 @@ class DrawingView: UIView {
     var viewController: ViewController!
     var buttonStatus: Bool!
     var shapeType = 0
-    var theShapes = [Shape](){
-        didSet{
-            if theShapes.count == 0{
-                viewController.undoButtonStatus(status: false)
-            } else {
-                viewController.undoButtonStatus(status: true)
-            }
-        }
-    }
+    var theShapes = [Shape]()
     var initialPoint: CGPoint!
     var isThereAPartialShape : Bool = false
     var thePartialShape : Shape!
@@ -70,11 +62,16 @@ class DrawingView: UIView {
                                             Y: Double(topLeftPoint.y),
                                             theHeight: abs(Double(self.initialPoint.y-newPoint.y)),
                                             theWidth: abs(Double(self.initialPoint.x-newPoint.x)))
-            } else {
+            } else if shapeType == 1 {
                 self.thePartialShape = Oval(X: Double(topLeftPoint.x),
                                             Y: Double(topLeftPoint.y),
                                             theHeight: abs(Double(self.initialPoint.y-newPoint.y)),
                                             theWidth: abs(Double(self.initialPoint.x-newPoint.x)))
+            } else {
+                self.thePartialShape = Line(X: Double(self.initialPoint.x),
+                                            Y: Double(self.initialPoint.y),
+                                            nx: abs(Double(newPoint.x)),
+                                            ny: abs(Double(newPoint.y)))
             }
         }
         self.setNeedsDisplay()
@@ -92,14 +89,6 @@ class DrawingView: UIView {
         if theShapes.count > 0{
             theShapes.removeLast()
             self.setNeedsDisplay()
-        }
-    }
-    
-    func undoButtonStatus() -> Bool{
-        if theShapes.count == 0{
-            return false
-        } else {
-            return true
         }
     }
     
