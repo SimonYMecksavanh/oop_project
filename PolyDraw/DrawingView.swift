@@ -73,6 +73,7 @@ class DrawingView: UIView {
                                             nx: abs(Double(newPoint.x)),
                                             ny: abs(Double(newPoint.y)))
             }
+            
         }
         self.setNeedsDisplay()
     }
