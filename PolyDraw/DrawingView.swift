@@ -17,6 +17,11 @@ class DrawingView: UIView {
     var initialPoint: CGPoint!
     var isThereAPartialShape : Bool = false
     var thePartialShape : Shape!
+    var optionViewController: OptionsViewController!
+    var theLineWidth:CGFloat = 5
+    var theLineColor:CGColor = UIColor.black.cgColor
+    var isFill:Bool = false
+    var theFillColor:CGColor = UIColor.black.cgColor
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -49,10 +54,10 @@ class DrawingView: UIView {
         
     }
     
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first! as UITouch
         let newPoint = touch.location(in: self)
-        
         let topLeftPoint = CGPoint(x: self.initialPoint.x < newPoint.x ? self.initialPoint.x : newPoint.x,
                                    y: self.initialPoint.y < newPoint.y ? self.initialPoint.y : newPoint.y)
         
@@ -61,17 +66,28 @@ class DrawingView: UIView {
                 self.thePartialShape = Rect(X: Double(topLeftPoint.x),
                                             Y: Double(topLeftPoint.y),
                                             theHeight: abs(Double(self.initialPoint.y-newPoint.y)),
-                                            theWidth: abs(Double(self.initialPoint.x-newPoint.x)))
+                                            theWidth: abs(Double(self.initialPoint.x-newPoint.x)),
+                                            lineWidth: self.theLineWidth,
+                                            lineColor: self.theLineColor,
+                                            fillColor: self.theFillColor,
+                                            isFill: self.isFill)
+                
             } else if shapeType == 1 {
                 self.thePartialShape = Oval(X: Double(topLeftPoint.x),
                                             Y: Double(topLeftPoint.y),
                                             theHeight: abs(Double(self.initialPoint.y-newPoint.y)),
-                                            theWidth: abs(Double(self.initialPoint.x-newPoint.x)))
+                                            theWidth: abs(Double(self.initialPoint.x-newPoint.x)),
+                                            lineWidth: self.theLineWidth,
+                                            lineColor: self.theLineColor,
+                                            fillColor: self.theFillColor,
+                                            isFill: self.isFill)
             } else {
                 self.thePartialShape = Line(X: Double(self.initialPoint.x),
                                             Y: Double(self.initialPoint.y),
                                             nx: abs(Double(newPoint.x)),
-                                            ny: abs(Double(newPoint.y)))
+                                            ny: abs(Double(newPoint.y)),
+                                            lineWidth: self.theLineWidth,
+                                            lineColor: self.theLineColor)
             }
             
         }

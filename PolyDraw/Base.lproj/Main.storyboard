@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EcV-nC-Fit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EcV-nC-Fit">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -144,17 +144,33 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Save" id="hJA-LU-B7T"/>
+                                    <barButtonItem title="Save" id="hJA-LU-B7T">
+                                        <connections>
+                                            <action selector="saveButton:" destination="ZPP-c9-xTE" id="X8Q-0F-oU1"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hzc-hb-x2G"/>
-                                    <barButtonItem title="Close" id="dZB-3R-Lhx"/>
+                                    <barButtonItem title="Close" id="dZB-3R-Lhx">
+                                        <connections>
+                                            <action selector="closeButton:" destination="ZPP-c9-xTE" id="lYR-yb-Nbr"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjC-4G-pED">
+                                <rect key="frame" x="16" y="285" width="343" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="184" id="4rb-34-0gM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T0U-tB-R7W" firstAttribute="top" secondItem="BeN-SU-IJ2" secondAttribute="bottom" constant="8" id="35Q-I1-yq1"/>
                             <constraint firstItem="SET-V7-UME" firstAttribute="leading" secondItem="yrh-BW-4C4" secondAttribute="leadingMargin" constant="147" id="5fQ-B4-htn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oc7-s2-7dT" secondAttribute="trailing" id="7iT-85-Jk0"/>
+                            <constraint firstItem="jjC-4G-pED" firstAttribute="top" secondItem="oc7-s2-7dT" secondAttribute="bottom" constant="8" id="A6k-Um-VrV"/>
                             <constraint firstItem="Wlb-dM-XOt" firstAttribute="top" secondItem="T0U-tB-R7W" secondAttribute="bottom" constant="8" id="CFp-6c-r0W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SET-V7-UME" secondAttribute="trailing" constant="147" id="DFo-ld-bLZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="oc7-s2-7dT" secondAttribute="leading" id="Gcq-Qi-4Eb"/>
@@ -166,7 +182,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Wlb-dM-XOt" secondAttribute="trailing" id="OAH-N1-onv"/>
                             <constraint firstItem="oc7-s2-7dT" firstAttribute="top" secondItem="sWu-R7-3g1" secondAttribute="bottom" constant="8" id="P5Z-jO-nmb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T0U-tB-R7W" secondAttribute="trailing" id="SAC-1T-VMH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jjC-4G-pED" secondAttribute="trailing" id="T2z-gQ-WRp"/>
                             <constraint firstItem="dhJ-vx-13A" firstAttribute="top" secondItem="wTH-0c-4J3" secondAttribute="bottom" id="Wtm-NL-Eeh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jjC-4G-pED" secondAttribute="leading" id="XYO-7C-uuJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Wty-zv-T7H" secondAttribute="leading" id="YW7-qV-5KS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="sWu-R7-3g1" secondAttribute="leading" id="ZO3-SM-YmU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dhJ-vx-13A" secondAttribute="leading" id="c8R-KN-7dd"/>
@@ -178,6 +196,13 @@
                             <constraint firstAttribute="leadingMargin" secondItem="T0U-tB-R7W" secondAttribute="leading" id="zVg-I8-NYl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fillColorSelector" destination="oc7-s2-7dT" id="EgA-S1-ZG5"/>
+                        <outlet property="filledSwitch" destination="SET-V7-UME" id="jLK-KO-CXp"/>
+                        <outlet property="lineColorSelector" destination="Wlb-dM-XOt" id="e56-PQ-CdU"/>
+                        <outlet property="lineWidthSlider" destination="BeN-SU-IJ2" id="oO3-ZC-9DL"/>
+                        <outlet property="preview" destination="jjC-4G-pED" id="9vJ-8p-bXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VD-1K-Spe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
